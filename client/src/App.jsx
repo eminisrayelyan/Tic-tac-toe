@@ -5,16 +5,19 @@ import './App.css'
 
 const socket = io("http://localhost:3000");
 
+
 let unactives = {};
+let currentCombs = [
+  ['1', '2', '3'],
+  ['4', '5', '6'],
+  ['7', '8', '9']
+]
+
 
 function App() {
-  let currentSign = 'X';
+  const [currentSign, setCurrentSign] = useState('X');
+  
 
-  let currentCombs = [
-    ['1', '2', '3'],
-    ['4', '5', '6'],
-    ['7', '8', '9']
-  ]
   
   function handleClick (e) {  
     if (!unactives[e.target.id]) {
@@ -32,9 +35,9 @@ function App() {
       console.log(currentCombs)
       
       if (currentSign === 'X') {
-      currentSign = 'O';
+        setCurrentSign('O');
       } else {  
-      currentSign = 'X';
+        setCurrentSign('X');
       }
     }
     checkWin();
