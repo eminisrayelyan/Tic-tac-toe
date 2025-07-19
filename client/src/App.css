@@ -42,9 +42,10 @@
 }
 
 .board {
-  width: 100px;
+  width: 310px;
   height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
