@@ -1,11 +1,10 @@
-import { useState } from 'react'
 import './Button.css'
 
-
-function Button({ onClick, id, sign }) {
-
+function Button({ onClick, id, sign, disabled }) {
   return (
-    <button className='square' onClick={onClick} id={id}>{sign}</button>
+    <button className="square" onClick={onClick} id={id} disabled={disabled}>
+      {sign}
+    </button>
   )
 }
 
